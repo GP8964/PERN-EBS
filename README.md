@@ -13,6 +13,6 @@ The message will NOT show the password directly!
 3: Registration cheat
 You could just modify some information in the form, like the weapon ID to create an account with a robot equipped with powerful weapon, or a weapon that costs a lot of money for sale.
 PERN-EBS divides creating an account and creating a pilot into 2 steps, which can:
-- Prevent players from getting items that is not supposed for new players
+- Prevent new players from getting items that is not supposed for new players
 - Allow players to create multiple pilots from single account, for now I would limit the number to 4
 - Allow the implementation of combo attacks (like Jet Stream Attack)
