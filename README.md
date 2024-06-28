@@ -48,8 +48,6 @@ This step involves a post action, again, the server side doesn't check the sourc
     Repeat the process above, you are almost having access to all weapons in the list.
   
   Some EBS also uses the same path of the sample code for storing weapon information (/log/_hash.data), and allow all people to directly download the data.<br>
-  This vulnerability can be directly solved by saving all the information in a database.<br>
-  I don't know if secret weapon feature should be retained, but my sample version won't be including any.
 
 
 - 2: Password length<br><br>
@@ -79,30 +77,37 @@ This step involves a post action, again, the server side doesn't check the sourc
   A malicious player can hijack and even delete someone's account with a crafted registration confirmation page without even knowing his/her password!<br>
   This is the biggest vulnerability in EBS 1.05, which will not happen in PERN-EBS
 
+# My solutions
 To prevent cheating, hacking and add features at the same time, PERN-EBS will divide creating an account and creating a pilot into 2 steps, which can:
 - Prevent new players registering an account and get powerful and/or expensive items instantly
 - Allow players to create multiple pilots from single account, for now 4 is the max limit
 - Data validation and sanitization will be done to both prevent cheating and code injection.
 - I would classify weapons furthermore, like weapons for Mobile Suits, Mobile Fighters, Battleships, and Fortress.
 
+PERN-EBS will save the weapon information in a database, but almost all attributes will be public including the actual attacking power of a weapon.<br>
+Although this may let potential cheaters know about which weapon is the most powerful of all, a good security measure can prevent them from being able to cheat.
+  
 # Features different from the old EBS 1.05 built by ©NET GAME Communications
-- Pilot has 6 kinds of attributes (inherited from Super Robot Wars series), instead of the 4 attributes (ATK, DEF, EVD, HIT) of the original EBS:
+- Pilot has at least 6 kinds of attributes (inherited from Super Robot Wars series):
   - CQB: Close-Quarters Battle
   - RNG: Ranged Combat
   - SKL: Skill
   - DEF: Defense
   - EVD: Evasion
   - HIT: Accuracy
+  The original EBS only implemented 4 attributes (ATK, DEF, EVD, HIT) for pilots.<br>
+  Also, morale will be implemented, the mechanism will be determined in the future.
 
 - Spirit command instead of strategy (inherited from Super Robot Wars series):<br>
   Your pilot can be equipped with at most 6 kinds of spirit commands at a time, depending on his/her level.<br>
-  How those spirit commands are implemented will be determined later.
+  How those spirit commands are implemented will be determined in the future.
 
 - Choose pilot type instead of character:<br>
   Your pilot was born as Natural, New Type, Coordinator, Innovade, Innovator, Accord<br>
-  Natural pilots may be weaker at first, but you will have options to train the natural pilot to become a different kind.<br>
+  Natural pilots may be slightly weaker at first, but you will have options to train the natural pilot to become a different kind.<br>
   Other kinds of pilots are naturally better, but they don't have many options.<br>
-  Although in Gundam SEED Freedom, Accords are stronger than Coordinators, for the game balance I will set them to be almost the same.
+  Although in Gundam SEED Freedom, Accords are stronger than Coordinators, don't forget that the only one survived is Lacus Clyne, not those fought against Coordinators.<br>
+  So I will set the initial abilities of New Type, Coordinators and Accords to be nearly equal to each others.
 
 - Team and Battleship<br>
   You can have a team with battleship, you don't directly control the battleship, but you can request support from battleship.<br>
