@@ -1,6 +1,8 @@
 # PERN-EBS
-As I just learned how to use PERN stack (PostgreSQL database, Express backend, React frontend, Node.js framework) to build a fully functional web application
+As I just learned how to use PERN stack (PostgreSQL database, Express backend, React frontend, Node.js framework) to build a fully functional web application,
+
 I wish to try using this stack to revive a legacy web game: Endless Battle Satellite
+
 The newest known official version was built by ©NET GAME Communications in 2001 with Perl CGI
 
 A newer version built with PHP was built by some Hongkonger/Taiwanese and posted on GitHub here: https://github.com/c0re100/PHP-Endless-Battle
