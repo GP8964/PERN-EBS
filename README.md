@@ -16,6 +16,7 @@ PERN stack allows these to happen:
 - Multiple libraries can be used at the same time for website security.
 - A PostgreSQL database to store all information required.
 - If OAuth 2.0 is implemented, Google accounts can be used for login.
+- If someone can build a far more visually attractive front-end (like using 3D animations), he/she can use the existing back-end! I'll definitely try to document my back-end as I implement the back-end. 
 
 # Weapon list in old EBS 1.05
 Weapon list (ebs.cgi?WEAPON) contains information of most weapons in EBS.<br>
@@ -117,5 +118,6 @@ Although this may let potential cheaters know about which weapon is the most pow
 
 - Others<br>
   I will update when I get some new ideas. The design phase of this project has not finished.<br>
+  I'm also trying to build the basic part of the database to be used to store the information.<br>
   Feel free to give some suggestions.<br>
   You can give your suggestions in Japanese or Chinese(preferably traditional) too.
