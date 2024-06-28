@@ -43,7 +43,7 @@ Your password is directly shown on the screen.
 This step involves a post action, again, the server side doesn't check the source of post.
 
 # There are several vulnerabilities above, and my solutions
-1: Weapon list
+- 1: Weapon list
 You can save the weapon list form action part to your computer, and change the form action URL as below
 
 `<form action="https://www.endless-battle.net/ebs.cgi" method="POST">`
@@ -51,14 +51,14 @@ You can save the weapon list form action part to your computer, and change the f
 The weapon IDs also have easily recognizable patterns, allowing the search for secret weapon information with ease.
 
 
-For example you can add one line in the list of option tags to look for fortress weapon:
+ - For example you can add one line in the list of option tags to look for fortress weapon:
 
 `<option value="zzzz">Fortress`, open the web page, choose this and click 検索 (Search)
 
 You got it, the name is "ビッグキャノン" (Big Cannon), you can now update the name too!
 
 
-Another example, you see that `<option value="aaaa">高出力ビームナギナタ` has one secret next generation weapon, the weapon ID of the next one should be "aaaaa"
+ - Another example, you see that `<option value="aaaa">高出力ビームナギナタ` has one secret next generation weapon, the weapon ID of the next one should be "aaaaa"
 
 Insert `<option value="aaaaa">secret` below the above option tag, refresh your local web page and try again, you got the name of the secret weapon now.
 
@@ -72,7 +72,7 @@ This vulnerability can be directly solved by saving all the information in a dat
 I don't know if secret weapon feature should be retained, but my sample version won't be including any.
 
 
-2: Password length
+- 2: Password length
 
 Original version only allows maximum password length of 8.
 
@@ -83,16 +83,16 @@ My version will limit the minimum password length to 8.
 Instead, the maximum password length will be 72, which is same as the BCrypt hashed passwords and secrets.
 
 
-3: Character(Personality) and Weapon cheats
+- 3: Character(Personality) and Weapon cheats
 
 In both steps, you can cheat by saving the registration page to your computer, and do modification of your saved registration page as below:
-- Common: Modify `form action=./ebs.cgi` to `form action=https://www.endless-battle.net/ebs.cgi` (this is the exact EBS used for demonstration)
-- Cheat for step 1:
+  - Common: Modify `form action=./ebs.cgi` to `form action=https://www.endless-battle.net/ebs.cgi` (this is the exact EBS used for demonstration)
+  - Cheat for step 1:
 
 Between `<option value=5>冷酷` and `</select>` add `<br><option value=6>覚醒`, this adds a new character type.
 
 copy the whole list in ebs.cgi?WEAPON, from `<option value="a">ビームナギナタ` to `<option value="yb">短弓` to replace the original list of weapons that you can choose
-- Cheat for step 2:
+  - Cheat for step 2:
 
 Save the page to your computer, modify as below
 
@@ -101,12 +101,12 @@ Modify `<input type=hidden name=chara value=0>` to `<input type=hidden name=char
 Modify `<input type=hidden name=w value=i>` to `<input type=hidden name=w value=zzzz>` for Big Cannon (the fortress weapon)
 
 Modify the part looks like `<input type=hidden name=pass value=as_shown>` with a long password for your own security, they don't check.
-- Potentional hacking (XSS, SQL injection) concern:
+  - Potentional hacking (XSS, SQL injection) concern:
 
 The back end does nothing for data validation and sanitization, which can cause vulnerabilities.
 
 
-4: Extremely insecure way to directly show password to the player
+- 4: Extremely insecure way to directly show password to the player
 
 If you are using a public computer to register, and it happens that one person behind you is looking at your screen with malicious intent, your account will be hijacked easily.
 
