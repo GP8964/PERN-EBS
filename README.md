@@ -158,7 +158,7 @@ When you join a country, the high ranking officer has to assign you to a team if
 You can still have join a team without joining a country.
 
 - Others
-- 
+
 I will update when I get some new ideas. The design phase of this project has not finished.
 
 Feel free to give some suggestions.
