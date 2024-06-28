@@ -1,8 +1,6 @@
 # PERN-EBS
 As I just learned how to use PERN stack (PostgreSQL database, Express backend, React frontend, Node.js framework) to build a fully functional web application,
-
 I wish to try using this stack to revive a legacy web game: Endless Battle Satellite
-
 The newest known official version was built by ©NET GAME Communications in 2001 with Perl CGI
 
 A newer version built with PHP was built by some Hongkonger/Taiwanese and posted on GitHub here: https://github.com/c0re100/PHP-Endless-Battle
@@ -33,15 +31,10 @@ Step 1
 This step involves a post action, but the server side doesn't check the source of post.
 The server side does check if your desired player name collides with anyone else in this step.
 
-
 Step 2
 ![image info](./ebs105_reg2.png)
 Your password is directly shown on the screen.
-If you are using a public computer to register, and it happens that one person behind you looking at your screen with malicious intent, your account will be hijacked easily.
 This step involves a post action, again, the server side doesn't check the source of post.
-You can do the similar thing above, change the personality ID to the ID of awaken, weapon ID to a powerful or expensive weapon, then you are going to create an account with unfair advantage.
-The server side does NOT check if your desired player name collides with anyone else in this step.
-So you can hijack and even delete someone's account with a crafted registration confirmation page without even knowing his/her password.
 
 # There are several vulnerabilities above, and my solutions
 1: Weapon list
@@ -50,8 +43,8 @@ You can save the weapon list form action part to your computer, and change the f
 The weapon IDs also have easily recognizable patterns, allowing the search for secret weapon information with ease.
 
 For example you can add one line in the list of option tags to look for fortress weapon:
-`<option value="zzzz">Fortress`, open the web page, choose this and click 検索
-You got it, the name is ビッグキャノン, you can now update the name too!
+`<option value="zzzz">Fortress`, open the web page, choose this and click 検索 (Search)
+You got it, the name is "ビッグキャノン" (Big Cannon), you can now update the name too!
 
 Another example, you see that `<option value="aaaa">高出力ビームナギナタ` has one secret next generation weapon, the weapon ID of the next one should be "aaaaa"
 Insert `<option value="aaaaa">secret` below the above option tag, refresh your local web page and try again, you got the name of the secret weapon now.
@@ -83,6 +76,13 @@ Modify `<input type=hidden name=w value=i>` to `<input type=hidden name=w value=
 Modify the part looks like `<input type=hidden name=pass value=as_shown>` with a long password for your own security, they don't check.
 - Potentional hacking (XSS, SQL injection) concern:
 The back end does nothing for data validation and sanitization, which can cause vulnerabilities.
+
+4: Extremely insecure way to directly show password to the player
+If you are using a public computer to register, and it happens that one person behind you is looking at your screen with malicious intent, your account will be hijacked easily.
+
+5: The server side does NOT check if your desired player name collides with anyone else in step 2
+A malicious player can hijack and even delete someone's account with a crafted registration confirmation page without even knowing his/her password!
+This is the biggest vulnerability in EBS 1.05, which will not happen in PERN-EBS
 
 To prevent cheating, hacking and add features at the same time, PERN-EBS will divide creating an account and creating a pilot into 2 steps, which can:
 - Prevent new players registering an account and get powerful and/or expensive items instantly
