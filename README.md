@@ -8,7 +8,7 @@ PHP-EBS is also vulnerable to SQL Injection, which I have learned how to prevent
 PHP-EBS has incomplete server side form checking, which is also easier to deal with Express
 
 PERN stack allows these to happen:
-- Using JavaScript as the common programming language in front-end (React) and back-end (Express)
+- Using JavaScript as the common programming language for front-end (React) and back-end (Express)
 - Actually separate Model (database), View (front-end), Controller (back-end) into 3 logic components.
 - Single Page Application (React), while need longer initial loading time, can react to user input faster.
 - Data validation and sanitization using both React and Express, providing 2 layers of defense against injection attacks.
