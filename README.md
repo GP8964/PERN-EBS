@@ -125,18 +125,12 @@ To prevent cheating, hacking and add features at the same time, PERN-EBS will di
 
 # Features different from the old EBS 1.05 built by ©NET GAME Communications
 - Pilot has 6 kinds of attributes (inherited from Super Robot Wars series), instead of the 4 attributes (ATK, DEF, EVD, HIT) of the original EBS:
-
-CQB: Close-Quarters Battle
-
-RNG: Ranged Combat
-
-SKL: Skill
-
-DEF: Defense
-
-EVD: Evasion
-
-HIT: Accuracy
+  - CQB: Close-Quarters Battle
+  - RNG: Ranged Combat
+  - SKL: Skill
+  - DEF: Defense
+  - EVD: Evasion
+  - HIT: Accuracy
 
 
 - Spirit command instead of strategy (inherited from Super Robot Wars series):
