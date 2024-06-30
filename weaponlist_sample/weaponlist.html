@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全武器検索 All weapon list</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>全武器検索 All weapon list</h1>
+    <div class="tree" id="treeContainer"></div>
+
+    <!-- Hidden form for submission -->
+    <form id="treeForm" action="https://www.endless-battle.net/ebs.cgi" method="POST" style="display: none;">
+        <input type="hidden" name="wname" id="wname">
+        <input type="hidden" name="cmd" value="WEAPON">
+    </form>
+    <script src="weapons.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
